@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.container {
+  margin-bottom: 6rem;
+}
+
+.title {
+  font-family: var(--font-inter);
+  font-size: 48px;
+  color: white;
+  align-items: inherit;
+}
+
+.title1 {
+  color: gray;
+}

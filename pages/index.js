@@ -3,6 +3,9 @@ import styles from '@/styles/Home.module.css';
 import Banner from '@/components/Banner';
 
 export default function Home() {
+  function handleOnBannerBtnClick() {
+    console.log('Handle Button Click');
+  }
   return (
     <>
       <Head>
@@ -12,8 +15,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>Cafe Finder</h1>
-        <Banner />
+        <Banner buttonText='View stores nearby' handleOnClick={handleOnBannerBtnClick} />
       </main>
     </>
   );
