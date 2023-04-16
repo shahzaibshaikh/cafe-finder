@@ -13,11 +13,29 @@
 
 .title {
   font-family: var(--font-inter);
-  font-size: 48px;
+  font-size: 4rem;
   color: white;
   align-items: inherit;
 }
 
+.subtitle {
+  font-weight: 200;
+}
+
+.button {
+  border: none;
+  font-size: 1rem;
+  color: white;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background: rgb(20, 66, 164);
+}
+
+.button:hover {
+  background: gray;
+  transition: 200ms;
+}
+
 .title1 {
-  color: gray;
+  color: rgb(179, 179, 179);
 }
