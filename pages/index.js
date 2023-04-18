@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import Banner from '@/components/Banner';
+import Card from '@/components/Card';
 
 export default function Home() {
   function handleOnBannerBtnClick() {
@@ -16,6 +17,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Banner buttonText='View stores nearby' handleOnClick={handleOnBannerBtnClick} />
+        <Card />
       </main>
     </>
   );
