@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import Banner from '@/components/Banner';
 import Card from '@/components/Card';
+import coffeeStores from '../data/coffee-stores.json';
 
 export default function Home() {
   function handleOnBannerBtnClick() {
@@ -18,36 +19,13 @@ export default function Home() {
       <main className={styles.main}>
         <Banner buttonText='View stores nearby' handleOnClick={handleOnBannerBtnClick} />
         <div className={styles.cardLayout}>
-          <Card
-            name='Dark Horse Coffee'
-            imgUrl='/static/mesh-gradient.png'
-            href='/coffee-store/darkhorse-coffee'
-          />
-          <Card
-            name='Dark Horse Coffee'
-            imgUrl='/static/mesh-gradient.png'
-            href='/coffee-store/darkhorse-coffee'
-          />
-          <Card
-            name='Dark Horse Coffee'
-            imgUrl='/static/mesh-gradient.png'
-            href='/coffee-store/darkhorse-coffee'
-          />
-          <Card
-            name='Dark Horse Coffee'
-            imgUrl='/static/mesh-gradient.png'
-            href='/coffee-store/darkhorse-coffee'
-          />
-          <Card
-            name='Dark Horse Coffee'
-            imgUrl='/static/mesh-gradient.png'
-            href='/coffee-store/darkhorse-coffee'
-          />
-          <Card
-            name='Dark Horse Coffee'
-            imgUrl='/static/mesh-gradient.png'
-            href='/coffee-store/darkhorse-coffee'
-          />
+          {coffeeStores.map(store => (
+            <Card
+              name={store.name}
+              imgUrl={store.imgUrl}
+              href={`/coffee-store/${store.id}`}
+            />
+          ))}
         </div>
       </main>
     </>
