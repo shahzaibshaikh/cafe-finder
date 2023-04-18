@@ -12,12 +12,11 @@ export async function getStaticProps(context) {
   };
 }
 
-export default function Home(props) {
-  console.log(props);
-
+export default function Home({ coffeeStores }) {
   function handleOnBannerBtnClick() {
     console.log('Handle Button Click');
   }
+
   return (
     <>
       <Head>
@@ -29,7 +28,7 @@ export default function Home(props) {
       <main className={styles.main}>
         <Banner buttonText='View stores nearby' handleOnClick={handleOnBannerBtnClick} />
         <div className={styles.cardLayout}>
-          {props.coffeeStores.map(store => (
+          {coffeeStores.map(store => (
             <Card
               key={store.id}
               name={store.name}
