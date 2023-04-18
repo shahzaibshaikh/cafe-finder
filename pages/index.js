@@ -21,6 +21,7 @@ export default function Home() {
         <div className={styles.cardLayout}>
           {coffeeStores.map(store => (
             <Card
+              key={store.id}
               name={store.name}
               imgUrl={store.imgUrl}
               href={`/coffee-store/${store.id}`}
