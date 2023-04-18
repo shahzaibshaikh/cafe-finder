@@ -35,6 +35,7 @@ export default function Home(props) {
               name={store.name}
               imgUrl={store.imgUrl}
               href={`/coffee-store/${store.id}`}
+              alt={store.name}
             />
           ))}
         </div>
