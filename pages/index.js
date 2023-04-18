@@ -17,7 +17,11 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Banner buttonText='View stores nearby' handleOnClick={handleOnBannerBtnClick} />
-        <Card />
+        <Card
+          name='Dark Horse Coffee'
+          imgUrl='/static/mesh-gradient.png'
+          href='/coffee-store/darkhorse-coffee'
+        />
       </main>
     </>
   );
