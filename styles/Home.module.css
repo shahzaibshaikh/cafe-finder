@@ -119,3 +119,15 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+
+@media (max-width: 900px) {
+  .cardLayout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cardLayout {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
