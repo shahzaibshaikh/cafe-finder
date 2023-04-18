@@ -4,6 +4,14 @@ import Banner from '@/components/Banner';
 import Card from '@/components/Card';
 import coffeeStores from '../data/coffee-stores.json';
 
+export async function getStaticProps(context) {
+  return {
+    props: {
+      coffeeStores
+    }
+  };
+}
+
 export default function Home() {
   function handleOnBannerBtnClick() {
     console.log('Handle Button Click');
