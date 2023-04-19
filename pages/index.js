@@ -27,7 +27,7 @@ export default function Home({ coffeeStores }) {
       </Head>
       <main className={styles.main}>
         <Banner buttonText='View stores nearby' handleOnClick={handleOnBannerBtnClick} />
-        {coffeeStores && <h2>Toronto Coffee Stores</h2>}
+        {coffeeStores && <h2 className={styles.subheading}>Toronto Coffee Stores</h2>}
         <div className={styles.cardLayout}>
           {coffeeStores.map(store => (
             <Card
