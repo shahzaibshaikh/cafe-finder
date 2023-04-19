@@ -27,18 +27,22 @@ export default function Home({ coffeeStores }) {
       </Head>
       <main className={styles.main}>
         <Banner buttonText='View stores nearby' handleOnClick={handleOnBannerBtnClick} />
-        {coffeeStores && <h2 className={styles.subheading}>Toronto Coffee Stores</h2>}
-        <div className={styles.cardLayout}>
-          {coffeeStores.map(store => (
-            <Card
-              key={store.id}
-              name={store.name}
-              imgUrl={store.imgUrl}
-              href={`/coffee-store/${store.id}`}
-              alt={store.name}
-            />
-          ))}
-        </div>
+        {coffeeStores && (
+          <>
+            <h2 className={styles.subheading}>Toronto Coffee Stores</h2>
+            <div className={styles.cardLayout}>
+              {coffeeStores.map(store => (
+                <Card
+                  key={store.id}
+                  name={store.name}
+                  imgUrl={store.imgUrl}
+                  href={`/coffee-store/${store.id}`}
+                  alt={store.name}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </main>
     </>
   );
