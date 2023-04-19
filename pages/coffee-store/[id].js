@@ -21,7 +21,7 @@ export function getStaticPaths() {
   };
 }
 
-function CoffeeStore() {
+function CoffeeStore({ coffeeStore }) {
   const router = useRouter();
 
   return (
@@ -29,6 +29,7 @@ function CoffeeStore() {
       Coffee store page: {router.query.id}
       <Link href='/'>Back to home</Link>
       <Link href='/coffee-store/dynamic'>Back to dynamic</Link>
+      <p>{coffeeStore.name}</p>
     </div>
   );
 }
