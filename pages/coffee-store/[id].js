@@ -8,7 +8,7 @@ export async function getStaticProps(staticProps) {
   return {
     props: {
       coffeeStore: coffeeStores.find(store => {
-        return store.id.toString() === params.id;
+        return '300' === params.id;
       })
     }
   };
@@ -23,6 +23,10 @@ export function getStaticPaths() {
 
 function CoffeeStore({ coffeeStore }) {
   const router = useRouter();
+
+  if (router.isFallback === true) {
+    return <h2>Loading...</h2>;
+  }
 
   return (
     <div>
