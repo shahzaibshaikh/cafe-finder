@@ -8,7 +8,7 @@ export async function getStaticProps(staticProps) {
   return {
     props: {
       coffeeStore: coffeeStores.find(store => {
-        return store.id === 0;
+        return store.id.toString() === params.id;
       })
     }
   };
