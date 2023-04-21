@@ -42,6 +42,7 @@ function CoffeeStore({ coffeeStore }) {
       </Head>
       <Link href='/'>Back to home</Link>
       <p>{coffeeStore.name}</p>
+      <p>{coffeeStore.address}</p>
     </div>
   );
 }
