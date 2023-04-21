@@ -30,7 +30,6 @@ function CoffeeStore({ coffeeStore }) {
 
   return (
     <div>
-      Coffee store page: {router.query.id}
       <Link href='/'>Back to home</Link>
       <p>{coffeeStore.name}</p>
     </div>
