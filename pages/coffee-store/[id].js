@@ -18,7 +18,7 @@ export async function getStaticProps(staticProps) {
 export function getStaticPaths() {
   const paths = coffeeStores.map(store => {
     return {
-      params: { id: store.id }
+      params: { id: store.id.toString() }
     };
   });
 
