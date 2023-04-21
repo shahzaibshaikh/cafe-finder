@@ -23,7 +23,7 @@ export function getStaticPaths() {
   });
 
   return {
-    paths: [{ params: { id: '0' } }, { params: { id: '1' } }, { params: { id: '2' } }],
+    paths,
     fallback: true
   };
 }
