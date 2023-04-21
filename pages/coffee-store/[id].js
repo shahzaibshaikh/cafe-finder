@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import coffeeStores from '../../data/coffee-stores.json';
+import Head from 'next/head';
 
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
@@ -30,6 +31,9 @@ function CoffeeStore({ coffeeStore }) {
 
   return (
     <div>
+      <Head>
+        <title>{coffeeStore.name}</title>
+      </Head>
       <Link href='/'>Back to home</Link>
       <p>{coffeeStore.name}</p>
     </div>
