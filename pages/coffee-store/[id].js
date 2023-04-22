@@ -42,10 +42,14 @@ function CoffeeStore({ coffeeStore }) {
         <title>{coffeeStore.name}</title>
       </Head>
       <Link href='/'>Back to home</Link>
-      <Image src={coffeeStore.imgUrl} width={500} height={400} alt={coffeeStore.name} />
-      <p>{coffeeStore.name}</p>
-      <p>{coffeeStore.address}</p>
-      <p>{coffeeStore.neighbourhood}</p>
+      <div>
+        <Image src={coffeeStore.imgUrl} width={500} height={400} alt={coffeeStore.name} />
+        <div>
+          <p>{coffeeStore.name}</p>
+          <p>{coffeeStore.address}</p>
+          <p>{coffeeStore.neighbourhood}</p>
+        </div>
+      </div>
     </div>
   );
 }
