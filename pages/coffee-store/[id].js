@@ -4,6 +4,7 @@ import React from 'react';
 import coffeeStores from '../../data/coffee-stores.json';
 import Head from 'next/head';
 import Image from 'next/image';
+import styles from '../../styles/coffee-store.module.css';
 
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
@@ -41,13 +42,22 @@ function CoffeeStore({ coffeeStore }) {
       <Head>
         <title>{coffeeStore.name}</title>
       </Head>
-      <Link href='/'>Back to home</Link>
-      <div>
-        <Image src={coffeeStore.imgUrl} width={500} height={400} alt={coffeeStore.name} />
+      <div className={styles.container}>
+        <Link href='/' className={styles.backHomeButton}>
+          Back to home
+        </Link>
         <div>
-          <p>{coffeeStore.name}</p>
-          <p>{coffeeStore.address}</p>
-          <p>{coffeeStore.neighbourhood}</p>
+          <Image
+            src={coffeeStore.imgUrl}
+            width={500}
+            height={400}
+            alt={coffeeStore.name}
+          />
+          <div>
+            <p>{coffeeStore.name}</p>
+            <p>{coffeeStore.address}</p>
+            <p>{coffeeStore.neighbourhood}</p>
+          </div>
         </div>
       </div>
     </div>
