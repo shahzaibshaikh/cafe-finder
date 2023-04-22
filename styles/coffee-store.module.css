@@ -6,3 +6,9 @@
   padding: 6rem;
   min-height: 100vh;
 }
+
+.backHomeButton {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
