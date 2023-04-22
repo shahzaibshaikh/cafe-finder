@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import coffeeStores from '../../data/coffee-stores.json';
 import Head from 'next/head';
+import Image from 'next/image';
 
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
@@ -41,6 +42,7 @@ function CoffeeStore({ coffeeStore }) {
         <title>{coffeeStore.name}</title>
       </Head>
       <Link href='/'>Back to home</Link>
+      <Image src={coffeeStore.imgUrl} width={260} height={160} alt={coffeeStore.name} />
       <p>{coffeeStore.name}</p>
       <p>{coffeeStore.address}</p>
       <p>{coffeeStore.neighbourhood}</p>
