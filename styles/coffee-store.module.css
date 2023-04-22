@@ -8,8 +8,13 @@
 }
 
 .backHomeButton {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.coffeeTitle {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 

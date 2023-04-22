@@ -46,6 +46,7 @@ function CoffeeStore({ coffeeStore }) {
         <Link href='/' className={styles.backHomeButton}>
           Back to home
         </Link>
+        <h2 className={styles.coffeeTitle}>{coffeeStore.name}</h2>
         <div className={styles.HStack}>
           <Image
             src={coffeeStore.imgUrl}
@@ -55,9 +56,7 @@ function CoffeeStore({ coffeeStore }) {
             className={styles.detailImage}
           />
           <div className={styles.detailGlass}>
-            <p>{coffeeStore.name}</p>
             <p>{coffeeStore.address}</p>
-            <p>{coffeeStore.neighbourhood}</p>
           </div>
         </div>
       </div>
