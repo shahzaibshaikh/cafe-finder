@@ -57,6 +57,7 @@ function CoffeeStore({ coffeeStore }) {
           />
           <div className={styles.detailGlass}>
             <p>{coffeeStore.address}</p>
+            <p>10</p>
           </div>
         </div>
       </div>
