@@ -46,14 +46,14 @@ function CoffeeStore({ coffeeStore }) {
         <Link href='/' className={styles.backHomeButton}>
           Back to home
         </Link>
-        <div>
+        <div className={styles.HStack}>
           <Image
             src={coffeeStore.imgUrl}
             width={500}
             height={400}
             alt={coffeeStore.name}
           />
-          <div>
+          <div className={styles.detailGlass}>
             <p>{coffeeStore.name}</p>
             <p>{coffeeStore.address}</p>
             <p>{coffeeStore.neighbourhood}</p>
