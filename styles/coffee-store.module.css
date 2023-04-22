@@ -34,3 +34,8 @@
 .detailImage {
   border-radius: 10px;
 }
+
+.detailGlass {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
