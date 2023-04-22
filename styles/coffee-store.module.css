@@ -12,3 +12,9 @@
   font-weight: 700;
   margin-bottom: 1rem;
 }
+
+.HStack {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}

@@ -52,6 +52,7 @@ function CoffeeStore({ coffeeStore }) {
             width={500}
             height={400}
             alt={coffeeStore.name}
+            className={styles.detailImage}
           />
           <div className={styles.detailGlass}>
             <p>{coffeeStore.name}</p>
