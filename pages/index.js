@@ -10,9 +10,15 @@ export async function getStaticProps(context) {
     props: {
       coffeeStores: axios
         .get(
-          'https://api.foursquare.com/v3/places/search?ll=24.8607,67.0011&query=coffee+store&fields=photos,fsq_id,name,location&client_id=4YMEURUF4AL2YFP4SLTIMUPMRBFSEGRQX11VAIDQT4S2JO01&client_secret=O0131EOWYCZZU5Q1STTJHXVQV3AFSEK2VYZ0U5PHL3NZJ5MZ'
+          'https://api.foursquare.com/v3/places/search?ll=24.8607,67.0011&query=coffee+store&fields=photos,fsq_id,name,location&client_id=4YMEURUF4AL2YFP4SLTIMUPMRBFSEGRQX11VAIDQT4S2JO01&client_secret=O0131EOWYCZZU5Q1STTJHXVQV3AFSEK2VYZ0U5PHL3NZJ5MZ',
+          {
+            headers: {
+              Accept: 'application/json',
+              Authorization: 'fsq3fngmT/TqbdfqgiVDNDQ6+vjoPbX/sEwoqxLEFEqwyhQ='
+            }
+          }
         )
-        .then(response => response.json())
+        .then(response => log(response))
         .then(data => console.log(data))
         .catch(err => console.error(err))
     }
