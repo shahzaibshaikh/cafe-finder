@@ -2,28 +2,15 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import Banner from '@/components/Banner';
 import Card from '@/components/Card';
-import coffeeStores from '../data/coffee-stores.json';
-import axios from 'axios';
+import fetchCoffeeStores from '@/libs/fetchCoffeeStores';
 
 export async function getStaticProps(context) {
-  try {
-    const response = await axios.get(
-      `https://api.foursquare.com/v3/places/search?ll=24.8607,67.0011&query=coffee+store&fields=photos,fsq_id,name,location&client_id=${process.env.NEXT_CLIENT_ID}&client_secret=${process.env.NEXT_CLIENT_SECRET}`,
-      {
-        headers: {
-          Accept: 'application/json',
-          Authorization: process.env.NEXT_API_KEY
-        }
-      }
-    );
-    return {
-      props: {
-        coffeeStores: response.data.results
-      }
-    };
-  } catch (err) {
-    throw err;
-  }
+  const coffeeStores = await fetchCoffeeStores();
+  return {
+    props: {
+      coffeeStores: coffeeStores
+    }
+  };
 }
 
 export default function Home({ coffeeStores }) {
