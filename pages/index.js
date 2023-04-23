@@ -30,7 +30,6 @@ export default function Home({ coffeeStores }) {
   function handleOnBannerBtnClick() {
     console.log('Handle Button Click');
   }
-  console.log(coffeeStores);
 
   return (
     <>
@@ -48,9 +47,9 @@ export default function Home({ coffeeStores }) {
             <div className={styles.cardLayout}>
               {coffeeStores.map(store => (
                 <Card
-                  key={store.id}
+                  key={store.fsq_id}
                   name={store.name}
-                  imgUrl={store.photos[0].prefix + store.photos[0].suffix}
+                  imgUrl={store.photos[0].prefix + 'original' + store.photos[0].suffix}
                   href={`/coffee-store/${store.id}`}
                   alt={store.name}
                 />
