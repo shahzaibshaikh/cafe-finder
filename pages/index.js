@@ -50,7 +50,7 @@ export default function Home({ coffeeStores }) {
                 <Card
                   key={store.id}
                   name={store.name}
-                  imgUrl={store.imgUrl}
+                  imgUrl={store.photos[0].prefix + store.photos[0].suffix}
                   href={`/coffee-store/${store.id}`}
                   alt={store.name}
                 />
