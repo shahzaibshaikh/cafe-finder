@@ -52,7 +52,7 @@ function CoffeeStore({ coffeeStore }) {
         <h2 className={styles.coffeeTitle}>{coffeeStore.name}</h2>
         <div className={styles.HStack}>
           <Image
-            src={coffeeStore.imgUrl}
+            src={coffeeStore.photos[0].prefix + 'original' + coffeeStore.photos[0].suffix}
             width={500}
             height={400}
             alt={coffeeStore.name}
