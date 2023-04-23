@@ -6,29 +6,31 @@ import coffeeStores from '../data/coffee-stores.json';
 import axios from 'axios';
 
 export async function getStaticProps(context) {
-  return {
-    props: {
-      coffeeStores: axios
-        .get(
-          'https://api.foursquare.com/v3/places/search?ll=24.8607,67.0011&query=coffee+store&fields=photos,fsq_id,name,location&client_id=4YMEURUF4AL2YFP4SLTIMUPMRBFSEGRQX11VAIDQT4S2JO01&client_secret=O0131EOWYCZZU5Q1STTJHXVQV3AFSEK2VYZ0U5PHL3NZJ5MZ',
-          {
-            headers: {
-              Accept: 'application/json',
-              Authorization: 'fsq3fngmT/TqbdfqgiVDNDQ6+vjoPbX/sEwoqxLEFEqwyhQ='
-            }
-          }
-        )
-        .then(response => log(response))
-        .then(data => console.log(data))
-        .catch(err => console.error(err))
-    }
-  };
+  try {
+    const response = await axios.get(
+      'https://api.foursquare.com/v3/places/search?ll=24.8607,67.0011&query=coffee+store&fields=photos,fsq_id,name,location&client_id=4YMEURUF4AL2YFP4SLTIMUPMRBFSEGRQX11VAIDQT4S2JO01&client_secret=O0131EOWYCZZU5Q1STTJHXVQV3AFSEK2VYZ0U5PHL3NZJ5MZ',
+      {
+        headers: {
+          Accept: 'application/json',
+          Authorization: 'fsq3fngmT/TqbdfqgiVDNDQ6+vjoPbX/sEwoqxLEFEqwyhQ='
+        }
+      }
+    );
+    return {
+      props: {
+        coffeeStores: response.data.results
+      }
+    };
+  } catch (err) {
+    throw err;
+  }
 }
 
 export default function Home({ coffeeStores }) {
   function handleOnBannerBtnClick() {
     console.log('Handle Button Click');
   }
+  console.log(coffeeStores);
 
   return (
     <>
