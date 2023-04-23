@@ -59,7 +59,7 @@ function CoffeeStore({ coffeeStore }) {
             className={styles.detailImage}
           />
           <div className={styles.detailGlass}>
-            <p>{coffeeStore.address}</p>
+            <p>{coffeeStore.location.formatted_address}</p>
             <p>10</p>
           </div>
         </div>
