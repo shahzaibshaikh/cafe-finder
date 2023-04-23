@@ -5,16 +5,31 @@ import coffeeStores from '../../data/coffee-stores.json';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../../styles/coffee-store.module.css';
+import axios from 'axios';
 
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
-  return {
-    props: {
-      coffeeStore: coffeeStores.find(store => {
-        return store.id.toString() === params.id;
-      })
-    }
-  };
+
+  try {
+    const response = await axios.get(
+      `https://api.foursquare.com/v3/places/search?ll=24.8607,67.0011&query=coffee+store&fields=photos,fsq_id,name,location&client_id=${process.env.NEXT_CLIENT_ID}&client_secret=${process.env.NEXT_CLIENT_SECRET}`,
+      {
+        headers: {
+          Accept: 'application/json',
+          Authorization: process.env.NEXT_API_KEY
+        }
+      }
+    );
+    return {
+      props: {
+        coffeeStore: response.data.results.find(store => {
+          return store.fsq_id.toString() === params.id;
+        })
+      }
+    };
+  } catch (err) {
+    throw err;
+  }
 }
 
 export function getStaticPaths() {
