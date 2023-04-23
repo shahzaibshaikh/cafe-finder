@@ -3,11 +3,18 @@ import styles from '@/styles/Home.module.css';
 import Banner from '@/components/Banner';
 import Card from '@/components/Card';
 import coffeeStores from '../data/coffee-stores.json';
+import axios from 'axios';
 
 export async function getStaticProps(context) {
   return {
     props: {
-      coffeeStores
+      coffeeStores: axios
+        .get(
+          'https://api.foursquare.com/v3/places/search?ll=24.8607,67.0011&query=coffee+store&fields=photos,fsq_id,name,location&client_id=4YMEURUF4AL2YFP4SLTIMUPMRBFSEGRQX11VAIDQT4S2JO01&client_secret=O0131EOWYCZZU5Q1STTJHXVQV3AFSEK2VYZ0U5PHL3NZJ5MZ'
+        )
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err))
     }
   };
 }
