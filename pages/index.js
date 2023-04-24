@@ -36,7 +36,9 @@ export default function Home({ coffeeStores }) {
                 <Card
                   key={store.fsq_id}
                   name={store.name}
-                  imgUrl={store.photos[0].prefix + 'original' + store.photos[0].suffix}
+                  imgUrl={
+                    store?.photos[0]?.prefix + 'original' + store?.photos[0]?.suffix
+                  }
                   href={`/coffee-store/${store.fsq_id}`}
                   alt={store.name}
                 />
