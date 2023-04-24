@@ -8,7 +8,7 @@ function Banner(props) {
         <span className={styles.title1}>Cafe </span>
         <span className={styles.title2}>Finder</span>
       </h1>
-      <p className={styles.subtitle}>Discover your local coffee shops</p>
+      <p className={styles.subtitle}>Discover your local coffee shops and cafes.</p>
       <button className={styles.button} onClick={props.handleOnClick}>
         {props.buttonText}
       </button>
