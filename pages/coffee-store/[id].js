@@ -60,6 +60,7 @@ function CoffeeStore({ coffeeStore }) {
           />
           <div className={styles.detailGlass}>
             <p>{coffeeStore.location.formatted_address}</p>
+            <p>{coffeeStore.location.locality}</p>
             <p>10</p>
           </div>
         </div>
