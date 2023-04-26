@@ -9,6 +9,7 @@ import fetchCoffeeStores from '@/libs/fetchCoffeeStores';
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
   const coffeeStores = await fetchCoffeeStores();
+  console.log(coffeeStores);
 
   return {
     props: {
